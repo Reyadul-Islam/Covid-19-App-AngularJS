@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!--css-->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <script src="js/myscript.js"></script>
+    </head>
+    <body ng-app="MyApp" ng-controller="MyCtrl">
+        <div class="container">
+            <div class="jumbotron py-3">
+                <h1 class="text-center">{{title}}</h1>
+                <p class="pt-3" style="text-align:justify; font-weight:bold;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    We use directives to create reusable components. A component allows you to hide complex DOM structure, CSS, and behavior.
+            This lets you focus either on what the application does or how the application looks separately.
+            An important part of serious apps is localization. AngularJS's locale aware filters and stemming directives give you building blocks to make your application available in all locales.
+                </p>
+                <div class="container text-center" style="color:black;font-weight:bold;font-family: fantasy;font-size:30px;">
+                    <h2>World Corona-Virus Cases</h2>
+                </div>
+                <!----all data-->
+                <div class="row text-center mt-5">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h3>Confirmed Cases:</h3>
+                                <h3>{{all_data.confirmed.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h3>Recovered Cases:</h3>
+                                <h3>{{all_data.recovered.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body ">
+                                <h3>Death Cases:</h3>
+                                <h3>{{all_data.deaths.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End All Data-->
+                <input type="text" class="form-control mt-4" placeholder="Enter your Country name"
+                ng-model="c" ng-change="get_c_data()">
+                
+                <!--c_data-->
+                <div class="row text-center mt-4">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h3>Confirmed Cases:</h3>
+                                <h3>{{c_data.confirmed.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h3>Recovered Cases:</h3>
+                                <h3>{{c_data.recovered.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body ">
+                                <h3>Death Cases:</h3>
+                                <h3>{{c_data.deaths.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--end of c_data-->
+            </div>
+        </div>
+    </body>
+</html>
